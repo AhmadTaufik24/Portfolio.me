@@ -1,0 +1,21 @@
+{
+  "name": "Taufik - Visual Creator",
+  "short_name": "Taufik",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "description": "Portfolio profesional Taufik sebagai Fotografer, Retoucher, dan Desainer.",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Taufik's Profile</title>
+  
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#ffffff"/>
+  <meta name="description" content="Taufik's Portfolio Website - Photographer, Retoucher, and Designer."/>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="navbar-container">
+      <a href="#home" class="logo">TAUFIK</a>
+
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#journal">Journal</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar-right">
+        <div class="toggle-container">
+          <div class="switch-toggle" id="modeToggle" title="Toggle Mode">
+            <span class="switch-bg"></span>
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/moon-symbol.png" class="icon icon-moon" alt="Moon" />
+            <img src="https://img.icons8.com/ios-glyphs/30/1a1a1a/sun--v1.png" class="icon icon-sun" alt="Sun" />
+          </div>
+          <div class="switch-toggle" id="langToggle" title="Switch Language">
+            <span class="switch-bg"></span>
+            <img src="https://img.icons8.com/emoji/36/indonesia-emoji.png" class="icon icon-id" alt="ID" />
+            <img src="https://img.icons8.com/emoji/36/united-kingdom-emoji.png" class="icon icon-uk" alt="UK" />
+          </div>
+        </div>
+        
+        <div class="hamburger" id="hamburger" title="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#journal">Journal</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="home">
+    <section class="hero-section">
+      <div class="hero-content animate-on-scroll">
+        <div class="hero-text">
+          <h1>Hi, I'm Taufik –<br>I'm a <span id="role-text" class="typing-effect"></span></h1>
+          <p>A creative professional specializing in photography, retouching, and design, focused on delivering high-quality visual aesthetics.</p>
+          <div class="hero-buttons">
+            <a href="#portfolio" class="btn btn-primary">View My Portfolio</a>
+            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+          </div>
+        </div>
+        
+        <div class="hero-image-container">
+           <div class="hero-image-wrapper">
+              <img src="assets/images/profile-1.png" alt="Taufik as a Photographer" class="hero-image active"/>
+              <img src="assets/images/profile-2.png" alt="Taufik as a Retoucher" class="hero-image" />
+              <img src="assets/images/profile-3.png" alt="Taufik as a Designer" class="hero-image" />
+           </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <script src="script.js"></script>
+</body>
+</html>
