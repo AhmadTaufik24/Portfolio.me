@@ -155,9 +155,9 @@ body.dark-mode .icon-moon { opacity: 0; }
   z-index: 1;
 }
 
-#modeToggle .icon-sun { opacity: 0; }
-body.dark-mode #modeToggle .icon-sun { opacity: 1; }
-body.dark-mode #modeToggle .icon-moon { opacity: 0; }
+#modeToggle .icon-sun { opacity: 100; }
+body.dark-mode #modeToggle .icon-sun { opacity: 100; }
+body.dark-mode #modeToggle .icon-moon { opacity: 100; }
 #modeToggle .switch-thumb {
   background-color: var(--highlight-color);
 }
@@ -171,7 +171,7 @@ body.dark-mode #modeToggle .switch-thumb {
 }
 #langToggle .switch-thumb {
   background-color: var(--highlight-color);
-  opacity: 0.8;
+  opacity: 100;
 }
 body.dark-mode #langToggle .switch-thumb {
     background-color: #ffffff;
@@ -463,12 +463,13 @@ body.dark-mode .portfolio-section::after {
 .portfolio-header {
   text-align: center;
   margin-bottom: 50px;
+  color: #1a1a1a;
 }
 
 .portfolio-header h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--text-color);
+  color: #1a1a1a;
   margin-bottom: 8px;
 }
 
