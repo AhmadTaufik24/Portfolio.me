@@ -8,9 +8,7 @@
   <link rel="manifest" href="manifest.json" />
   <meta name="theme-color" content="#ffffff"/>
   <meta name="description" content="Website Portofolio Taufik - Fotografer, Retoucher, dan Desainer."/>
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-  
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,29 +16,35 @@
   <header class="navbar">
     <div class="navbar-container">
       <a href="#home" class="logo">TAUFIK</a>
+
       <nav class="desktop-nav">
         <ul>
-          <li><a href="#home">Beranda</a></li>
-          <li><a href="#portfolio">Portofolio</a></li>
-          <li><a href="#about">Tentang</a></li>
-          <li><a href="#services">Layanan</a></li>
-          <li><a href="#journal">Jurnal</a></li>
-          <li><a href="#contact">Kontak</a></li>
+          <li><a href="https://example.com/home" target="_blank" rel="noopener">Beranda</a></li>
+          <li><a href="https://example.com/portfolio" target="_blank" rel="noopener">Portofolio</a></li>
+          <li><a href="https://example.com/about" target="_blank" rel="noopener">Tentang</a></li>
+          <li><a href="https://example.com/services" target="_blank" rel="noopener">Layanan</a></li>
+          <li><a href="https://example.com/jurnal" target="_blank" rel="noopener">Jurnal</a></li>
+          <li><a href="https://example.com/contact" target="_blank" rel="noopener">Kontak</a></li>
         </ul>
       </nav>
+
       <div class="navbar-right">
         <div class="toggle-container">
+          <!-- Toggle Mode -->
           <div class="switch-toggle active-left" id="modeToggle" title="Ubah Mode">
             <img src="https://img.icons8.com/ios-glyphs/30/f0f0f0/moon-symbol.png" alt="moon" class="icon icon-moon"/>
             <img src="https://img.icons8.com/ios-glyphs/30/1a1a1a/sun--v1.png" alt="sun" class="icon icon-sun"/>
             <span class="switch-thumb"></span>
           </div>
+
+          <!-- Toggle Bahasa -->
           <div class="switch-toggle active-left" id="langToggle" title="Ganti Bahasa">
             <img src="https://img.icons8.com/emoji/36/indonesia-emoji.png" class="icon icon-id" alt="ID" />
             <img src="https://img.icons8.com/emoji/36/united-kingdom-emoji.png" class="icon icon-uk" alt="UK" />
             <span class="switch-thumb"></span>
           </div>
         </div>
+
         <div class="hamburger" id="hamburger" title="Menu">
           <span></span>
           <span></span>
@@ -52,411 +56,159 @@
 
   <nav class="mobile-nav" id="mobileNav">
     <ul>
-      <li><a href="#home">Beranda</a></li>
-      <li><a href="#portfolio">Portofolio</a></li>
-      <li><a href="#about">Tentang</a></li>
-      <li><a href="#services">Layanan</a></li>
-      <li><a href="#journal">Jurnal</a></li>
-      <li><a href="#contact">Kontak</a></li>
+      <li><a href="https://example.com/home" target="_blank" rel="noopener">Beranda</a></li>
+      <li><a href="https://example.com/portfolio" target="_blank" rel="noopener">Portofolio</a></li>
+      <li><a href="https://example.com/about" target="_blank" rel="noopener">Tentang</a></li>
+      <li><a href="https://example.com/services" target="_blank" rel="noopener">Layanan</a></li>
+      <li><a href="https://example.com/jurnal" target="_blank" rel="noopener">Jurnal</a></li>
+      <li><a href="https://example.com/contact" target="_blank" rel="noopener">Kontak</a></li>
     </ul>
   </nav>
 
-<main>
-    <section class="hero-section" id="home">
-      <div class="hero-content animate-directional-y">
+  <main id="home">
+    <section class="hero-section">
+      <div class="hero-content animate-on-scroll">
         <div class="hero-text">
-          <h1>Hai, saya Taufik –<br>saya seorang <span id="role-text" class="typing-effect"></span></h1>
+          <h1>Hai, saya Taufik –<br>saya seorang 
+    <span class="role-wrapper">
+        <span class="role-placeholder">Fotografer</span>
+        <span id="role-text" class="typing-effect"></span>
+    </span>
+</h1>
           <p>Seorang profesional kreatif dengan spesialisasi fotografi, retouching, dan desain, yang fokus untuk memberikan estetika visual berkualitas tinggi.</p>
           <div class="hero-buttons">
-            <a href="#portfolio" class="btn btn-primary">Lihat Portofolio</a>
-            <a href="#contact" class="btn btn-secondary">Hubungi Saya</a>
+            <a href="https://example.com/portfolio" target="_blank" rel="noopener" class="btn btn-primary">Lihat Portofolio</a>
+            <a href="https://example.com/contact" target="_blank" rel="noopener" class="btn btn-secondary">Hubungi Saya</a>
           </div>
         </div>
+
         <div class="hero-image-container">
-          <div class="hero-image-wrapper">
-            <img src="assets/images/profile-1.png" alt="Taufik sebagai Fotografer" class="hero-image active"/>
-            <img src="assets/images/profile-2.png" alt="Taufik sebagai Retoucher" class="hero-image" />
-            <img src="assets/images/profile-3.png" alt="Taufik sebagai Desainer" class="hero-image" />
-          </div>
+           <div class="hero-image-wrapper">
+              <img src="assets/images/profile-1.png" alt="Taufik sebagai Fotografer" class="hero-image active"/>
+              <img src="assets/images/profile-2.png" alt="Taufik sebagai Retoucher" class="hero-image" />
+              <img src="assets/images/profile-3.png" alt="Taufik sebagai Desainer" class="hero-image" />
+           </div>
         </div>
       </div>
     </section>
 
     <section class="portfolio-section" id="portfolio">
-      <div class="portfolio-container">
-        <div class="portfolio-header animate-zoom-in">
-          <h2>Kumpulan Project</h2>
-          <p>Kumpulan karya visual dalam bentuk foto, video, dan desain.</p>
+    <div class="portfolio-container">
+        <div class="portfolio-header">
+            <h2>Kumpulan Project</h2>
+            <p>Kumpulan karya visual dalam bentuk foto, video, dan desain.</p>
         </div>
-        <div class="portfolio-content animate-group">
-          <div class="portfolio-slider-wrapper" data-animation="slide-in-left">
-            <div class="portfolio-blob"></div>
-            <div class="swiper portfolio-swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Project 1: Retouching Produk"></div>
-                <div class="swiper-slide"><img src="https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Project 2: Fotografi Urban"></div>
-                <div class="swiper-slide"><img src="https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Project 3: Desain Branding"></div>
-              </div>
+        <div class="portfolio-content">
+            <div class="portfolio-slider-wrapper animate-slide-in-left">
+                <div class="portfolio-blob"></div>
+                <div class="swiper portfolio-swiper">
+                    <div class="swiper-wrapper">
+                        
+                        <div class="swiper-slide">
+                            <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Project 1">
+                            <div class="slide-options-overlay">
+                                <a href="#" class="overlay-button view-project-btn" title="Lihat Project" target="_blank" rel="noopener">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                                <button class="overlay-button view-image-btn" title="Lihat Gambar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="https://images.pexels.com/photos/356079/pexels-photo-356079.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Project 2">
+                             <div class="slide-options-overlay">
+                                <a href="#" class="overlay-button view-project-btn" title="Lihat Project" target="_blank" rel="noopener">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                                <button class="overlay-button view-image-btn" title="Lihat Gambar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <img src="https://images.pexels.com/photos/1269968/pexels-photo-1269968.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Project 3">
+                             <div class="slide-options-overlay">
+                                <a href="#" class="overlay-button view-project-btn" title="Lihat Project" target="_blank" rel="noopener">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                </a>
+                                <button class="overlay-button view-image-btn" title="Lihat Gambar">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        
+
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
             </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-pagination"></div>
-          </div>
-          <div class="portfolio-text-content" data-animation="slide-in-right">
-            <h3 id="portfolio-title">Retouching Foto Model</h3>
-            <p id="portfolio-description">Retouching foto model dengan pendekatan beauty-retouch. Menghaluskan detail tanpa menghilangkan tekstur alami.</p>
-            <a href="#" class="portfolio-view-all">VIEW ALL PROJECT <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
-          </div>
+            
+            <div class="portfolio-text-content animate-slide-in-right"">
+                <h3 id="portfolio-title"></h3>
+                <p id="portfolio-description"></p>
+                <a href="#" class="portfolio-view-all">VIEW ALL PROJECT <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+            </div>
         </div>
-      </div>
-    </section>
-
-    <section class="about-section" id="about">
-  <div class="about-container">
-    <div class="about-content animate-zoom-in">
-      <div class="about-text">
-        <h2>Sedikit Tentang Saya</h2>
-        <p>Saya seorang desainer yang percaya pada kekuatan kesederhanaan. Dengan lebih dari 5 tahun pengalaman, saya mendapat hak istimewa untuk bekerja dengan startup dan perusahaan besar untuk menciptakan produk yang tidak hanya indah tetapi juga intuitif dan berdampak.</p>
-        <p>Proses desain saya berakar kuat pada riset dan empati pengguna, memastikan bahwa setiap keputusan dibuat dengan mempertimbangkan kepentingan pengguna. Saat tidak sedang mendesain, Anda bisa menemukan saya menjelajahi kedai kopi baru atau mengabadikan momen melalui lensa kamera saya.</p>
-        
-        <a href="#" class="btn btn-outline">
-          <span>Selengkapnya tentang saya</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-        </a>
-
-      </div>
-      <div class="about-image">
-        <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Foto Profil Taufik">
-      </div>
     </div>
-  </div>
 </section>
 
-    <section class="services-section" id="services">
-  <div class="services-container">
-    <div class="services-header animate-zoom-in">
-      <h2>Apa yang Saya Kerjakan</h2>
-      <p>Saya menawarkan berbagai layanan kreatif untuk mewujudkan ide-ide Anda.</p>
+<section class="stats-section">
+    <div class="stats-grid">
+        <div class="stat-item">
+            <div class="stat-number" data-target="5">0+</div>
+            <p class="stat-label">Tahun Pengalaman</p>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" data-target="99">0+</div>
+            <p class="stat-label">Proyek Selesai</p>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" data-target="20">0+</div>
+            <p class="stat-label">Klien Puas</p>
+        </div>
     </div>
-    <div class="services-grid">
-      
-      <div class="service-card animate-directional-y" data-url="https://example.com/branding">
-        <div class="service-front">
-          <img src="https://img.icons8.com/fluency-systems-regular/96/007bff/design.png" alt="Branding Icon" class="service-icon"/>
-          <h3>Branding</h3>
-          <p>Menciptakan identitas merek yang mudah diingat.</p>
-        </div>
-        <div class="service-back">
-          <span class="view-service-text">Lihat Layanan</span>
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/visible.png" alt="View Icon" class="service-eye-icon"/>
-        </div>
-      </div>
-
-      <div class="service-card animate-directional-y" data-url="https://example.com/ui-ux">
-        <div class="service-front">
-          <img src="https://img.icons8.com/fluency-systems-regular/96/007bff/microphone-2.png" alt="UI/UX Icon" class="service-icon"/>
-          <h3>Desain UI/UX</h3>
-          <p>Merancang antarmuka pengguna yang intuitif.</p>
-        </div>
-        <div class="service-back">
-          <span class="view-service-text">Lihat Layanan</span>
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/visible.png" alt="View Icon" class="service-eye-icon"/>
-        </div>
-      </div>
-
-      <div class="service-card animate-directional-y" data-url="https://example.com/illustration">
-        <div class="service-front">
-          <img src="https://img.icons8.com/fluency-systems-regular/96/007bff/paint-palette.png" alt="Illustration Icon" class="service-icon"/>
-          <h3>Ilustrasi</h3>
-          <p>Membuat ilustrasi kustom yang bercerita.</p>
-        </div>
-        <div class="service-back">
-          <span class="view-service-text">Lihat Layanan</span>
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/visible.png" alt="View Icon" class="service-eye-icon"/>
-        </div>
-      </div>
-
-      <div class="service-card animate-directional-y" data-url="https://example.com/strategy">
-        <div class="service-front">
-          <img src="https://img.icons8.com/fluency-systems-regular/96/007bff/windows-logo.png" alt="Strategy Icon" class="service-icon"/>
-          <h3>Strategi Kreatif</h3>
-          <p>Mengembangkan strategi efektif untuk proyek kreatif.</p>
-        </div>
-        <div class="service-back">
-          <span class="view-service-text">Lihat Layanan</span>
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/visible.png" alt="View Icon" class="service-eye-icon"/>
-        </div>
-      </div>
-
-    </div>
-    <div class="services-footer animate-zoom-in">
-      <a href="#contact" class="btn btn-primary">Mari Bekerja Sama</a>
-    </div>
-  </div>
 </section>
-    <section class="testimonial-section">
-      <div class="testimonial-container">
-        <div class="testimonial-header animate-zoom-in">
-          <h2>Testimoni dari Klien Kami</h2>
-          <p>Apa yang mereka katakan tentang hasil kerja dan kolaborasi bersama saya.</p>
+
+
+    <!-- ============================================= -->
+<!-- ===      SECTION TENTANG SAYA (FINAL)       === -->
+<!-- ============================================= -->
+<section id="about" class="about-section">
+    <div class="about-container">
+        <!-- Kolom Kiri: Foto Profil dengan class animasi -->
+        <div class="about-photo-wrapper animate-zoom-in">
+            <img src="https://images.pexels.com/photos/3771836/pexels-photo-3771836.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Foto Profil Taufik">
         </div>
 
-        <div class="testimonial-slider-wrapper">
-          <div class="swiper testimonial-swiper">
-            <div class="swiper-wrapper">
-              
-              <div class="swiper-slide">
-                <div class="testimonial-card animate-directional-y" data-url="https://example.com/project-charlie">
-                  <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="testimonial-bg" alt="Klien Charlie & Janice">
-                  <div class="testimonial-overlay">
-                    <span class="view-testimonial-text">Lihat Testimoni</span>
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/visible.png" alt="View Icon" class="eye-icon"/>
-                  </div>
-                  <div class="testimonial-content">
-                    <h3>Charlie & Janice</h3>
-                    <span>Sabtu, 11 September 2025</span>
-                    <p>"Hasilnya melebihi ekspektasi. Sangat direkomendasikan!"</p>
-                    <a href="#" class="testimonial-link">Lihat Project →</a>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="swiper-slide">
-                <div class="testimonial-card animate-directional-y" data-url="https://example.com/project-luthfi">
-                  <img src="https://images.pexels.com/photos/837358/pexels-photo-837358.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="testimonial-bg" alt="Klien Luthfi & Syalendra">
-                  <div class="testimonial-overlay">
-                    <span class="view-testimonial-text">Lihat Testimoni</span>
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/visible.png" alt="View Icon" class="eye-icon"/>
-                  </div>
-                  <div class="testimonial-content">
-                    <h3>Luthfi & Syalendra</h3>
-                    <span>Minggu, 01 Agustus 2025</span>
-                    <p>"Pelayanannya jauh lebih baik dari yang diharapkan. Terima kasih banyak telah membantu kami."</p>
-                    <a href="#" class="testimonial-link">Lihat Project →</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="testimonial-card animate-directional-y" data-url="https://example.com/project-widya">
-                  <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="testimonial-bg" alt="Klien Widya & Fakhri">
-                  <div class="testimonial-overlay">
-                    <span class="view-testimonial-text">Lihat Testimoni</span>
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/visible.png" alt="View Icon" class="eye-icon"/>
-                  </div>
-                  <div class="testimonial-content">
-                    <h3>Widya & Fakhri</h3>
-                    <span>Sabtu, 07 Agustus 2025</span>
-                    <p>"Alhamdulillah senang banget sama hasilnya, fast respon dan sangat membantu."</p>
-                    <a href="#" class="testimonial-link">Lihat Project →</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="testimonial-card animate-directional-y" data-url="https://example.com/project-dian">
-                  <img src="https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="testimonial-bg" alt="Klien Dian">
-                  <div class="testimonial-overlay">
-                    <span class="view-testimonial-text">Lihat Testimoni</span>
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/visible.png" alt="View Icon" class="eye-icon"/>
-                  </div>
-                  <div class="testimonial-content">
-                    <h3>Dian</h3>
-                    <span>Jumat, 15 Juli 2025</span>
-                    <p>"Desainnya modern dan sesuai dengan brief. Proses kolaborasinya juga sangat lancar."</p>
-                    <a href="#" class="testimonial-link">Lihat Project →</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="testimonial-card animate-directional-y" data-url="https://example.com/project-sari">
-                  <img src="https://images.pexels.com/photos/1181519/pexels-photo-1181519.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="testimonial-bg" alt="Klien Sari">
-                  <div class="testimonial-overlay">
-                    <span class="view-testimonial-text">Lihat Testimoni</span>
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/visible.png" alt="View Icon" class="eye-icon"/>
-                  </div>
-                  <div class="testimonial-content">
-                    <h3>Sari</h3>
-                    <span>Rabu, 22 Juni 2025</span>
-                    <p>"Sangat profesional dan hasil fotonya luar biasa. Kualitasnya top!"</p>
-                    <a href="#" class="testimonial-link">Lihat Project →</a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="swiper-slide">
-                <div class="testimonial-card animate-directional-y" data-url="https://example.com/project-rizky">
-                  <img src="https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="testimonial-bg" alt="Klien Rizky">
-                  <div class="testimonial-overlay">
-                    <span class="view-testimonial-text">Lihat Testimoni</span>
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/visible.png" alt="View Icon" class="eye-icon"/>
-                  </div>
-                  <div class="testimonial-content">
-                    <h3>Rizky</h3>
-                    <span>Senin, 02 Mei 2025</span>
-                    <p>"Retouching-nya sangat halus dan natural. Benar-benar mengubah foto biasa jadi luar biasa."</p>
-                    <a href="#" class="testimonial-link">Lihat Project →</a>
-                  </div>
-                </div>
-              </div>
-
-               <div class="swiper-slide">
-                <div class="testimonial-card animate-directional-y" data-url="https://example.com/project-indah">
-                  <img src="https://images.pexels.com/photos/935756/pexels-photo-935756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="testimonial-bg" alt="Klien Indah">
-                  <div class="testimonial-overlay">
-                    <span class="view-testimonial-text">Lihat Testimoni</span>
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/visible.png" alt="View Icon" class="eye-icon"/>
-                  </div>
-                  <div class="testimonial-content">
-                    <h3>Indah</h3>
-                    <span>Kamis, 14 April 2025</span>
-                    <p>"Konsep strateginya sangat membantu kami dalam menentukan arah visual brand."</p>
-                    <a href="#" class="testimonial-link">Lihat Project →</a>
-                  </div>
-                </div>
-              </div>
-
-               <div class="swiper-slide">
-                <div class="testimonial-card animate-zoom-in" data-url="https://example.com/project-budi">
-                  <img src="https://images.pexels.com/photos/874158/pexels-photo-874158.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="testimonial-bg" alt="Klien Budi">
-                  <div class="testimonial-overlay">
-                    <span class="view-testimonial-text">Lihat Testimoni</span>
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/visible.png" alt="View Icon" class="eye-icon"/>
-                  </div>
-                  <div class="testimonial-content">
-                    <h3>Budi</h3>
-                    <span>Selasa, 01 Maret 2025</span>
-                    <p>"Pekerjaan yang cepat dan hasilnya sangat memuaskan. Tidak ragu untuk kembali lagi."</p>
-                    <a href="#" class="testimonial-link">Lihat Project →</a>
-                  </div>
-                </div>
-              </div>
-
-               <div class="swiper-slide">
-                <div class="testimonial-card animate-zoom-in" data-url="https://example.com/project-mega">
-                  <img src="https://images.pexels.com/photos/712513/pexels-photo-712513.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="testimonial-bg" alt="Klien Mega">
-                  <div class="testimonial-overlay">
-                    <span class="view-testimonial-text">Lihat Testimoni</span>
-                    <img src="https://img.icons8.com/ios-filled/50/ffffff/visible.png" alt="View Icon" class="eye-icon"/>
-                  </div>
-                  <div class="testimonial-content">
-                    <h3>Mega</h3>
-                    <span>Sabtu, 12 Februari 2025</span>
-                    <p>"Komunikatif dan mudah diajak diskusi. Semua ide saya bisa diwujudkan dengan baik."</p>
-                    <a href="#" class="testimonial-link">Lihat Project →</a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="swiper-button-prev testimonial-prev"></div>
-          <div class="swiper-button-next testimonial-next"></div>
-          <div class="swiper-pagination testimonial-pagination"></div>
+        <!-- Kolom Kanan: Teks Deskripsi dengan class animasi -->
+        <div class="about-text-wrapper animate-zoom-in">
+            <h2>Sedikit Tentang Saya</h2>
+            <p>
+                Hai! Saya Taufik, seorang profesional kreatif yang bersemangat dalam menangkap momen dan menciptakan visual yang bercerita. Dengan pengalaman bertahun-tahun di dunia fotografi dan desain, saya berdedikasi untuk memberikan hasil berkualitas tinggi yang tidak hanya indah secara estetika, tetapi juga bermakna.
+            </p>
+            <a href="#" class="btn btn-outline">Selengkapnya Tentang Saya</a>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <section class="journal-section" id="journal">
-      <div class="journal-container">
-        <div class="journal-header animate-zoom-in">
-          <h2>Dari Jurnal Saya</h2>
-          <p>Beberapa tulisan dan cerita terbaru dari perjalanan kreatif saya.</p>
-        </div>
 
-        <div class="journal-content">
-          <a href="#" class="featured-post-link animate-zoom-in">
-            <div class="featured-post">
-              <div class="featured-post-thumbnail">
-                <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Pentingnya Personal Branding">
-              </div>
-              <div class="featured-post-content">
-                <span class="post-category">Desain</span>
-                <h3>Pentingnya Personal Branding untuk Kreator</h3>
-                <p>Di era digital, membangun personal brand bukan lagi pilihan, melainkan keharusan. Ini adalah cara kita menceritakan siapa diri kita...</p>
-                <div class="featured-post-footer">
-                  <span class="post-meta">13 Juli 2025 · 5 menit baca</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                </div>
-              </div>
-            </div>
-          </a>
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="Tampilan Gambar Diperbesar">
+</div>
 
-          <hr class="animate-zoom-in">
+    
 
-          <div class="post-list">
-            <a href="#" class="post-item animate-directional-y">
-              <h4>Tips Memilih Lensa Kamera untuk Pemula</h4>
-              <span class="post-meta">10 Juli 2025</span>
-            </a>
-            <a href="#" class="post-item animate-directional-y">
-              <h4>Studi Kasus: Proses Retouching Foto Produk</h4>
-              <span class="post-meta">05 Juli 2025</span>
-            </a>
-            <a href="#" class="post-item animate-directional-y">
-              <h4>Tren Desain Grafis yang Akan Mendominasi</h4>
-              <span class="post-meta">01 Juli 2025</span>
-            </a>
-          </div>
-
-          <div class="journal-footer animate-zoom-in">
-             <a href="#" class="btn btn-outline">
-                <span>Lihat Semua Tulisan</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="arrow-icon"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-             </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="faq-section" id="faq">
-      <div class="faq-container">
-        <div class="faq-header animate-zoom-in">
-          <h2>Pertanyaan yang Sering Diajukan</h2>
-          <p>Temukan jawaban cepat untuk pertanyaan umum tentang layanan dan proses kerja saya.</p>
-        </div>
-
-        <div class="accordion">
-          <div class="accordion-item animate-directional-y">
-            <button class="accordion-header">
-              <span>Bagaimana proses kerja sama dengan Anda?</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="accordion-icon"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-            </button>
-            <div class="accordion-content">
-              <p>Prosesnya dimulai dari konsultasi untuk memahami kebutuhan Anda, diikuti dengan pengiriman proposal dan penawaran. Setelah kesepakatan, kita akan masuk ke tahap eksekusi proyek dengan komunikasi rutin hingga proyek selesai dan diserahkan.</p>
-            </div>
-          </div>
-          <div class="accordion-item animate-directional-y">
-            <button class="accordion-header">
-              <span>Berapa lama waktu pengerjaan sebuah proyek?</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="accordion-icon"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-            </button>
-            <div class="accordion-content">
-              <p>Waktu pengerjaan sangat bervariasi tergantung pada kompleksitas proyek. Untuk proyek desain logo biasanya memakan waktu 1-2 minggu, sementara proyek retouching foto bisa selesai dalam beberapa hari. Estimasi waktu yang lebih akurat akan diberikan dalam proposal.</p>
-            </div>
-          </div>
-          <div class="accordion-item animate-directional-y">
-            <button class="accordion-header">
-              <span>Sistem pembayaran seperti apa yang Anda gunakan?</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="accordion-icon"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-            </button>
-            <div class="accordion-content">
-              <p>Untuk proyek baru, saya biasanya meminta uang muka (down payment) sebesar 50% sebelum pekerjaan dimulai. Sisa pembayaran dilakukan setelah proyek selesai dan sebelum file final diserahkan. Saya menerima pembayaran melalui transfer bank.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-cta animate-zoom-in">
-          <h3>Belum ketemu apa yang dicari?</h3>
-          <p>Kalau ga nemu apa yang dicari di FAQ kami, jangan kuatir. Kakak bisa kontak kami langsung.</p>
-          <a href="#contact" class="btn btn-primary">Kontak Saya</a>
-        </div>
-      </div>
-    </section>
-</main>
-  
+    
+  </main>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
+
 </body>
 </html>
