@@ -201,38 +201,31 @@ document.addEventListener("DOMContentLoaded", () => {
         updatePortfolioText(0);
     }
 
-    // =====================================================================
-// === KODE FINAL - ANIMASI SCROLL UNTUK SEMUA SECTION (BERULANG)    ===
+// =====================================================================
+// === KODE BARU - ANIMASI SCROLL (DENGAN ZIGZAG)                    ===
 // =====================================================================
 
 const repeatingAnimationObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
-        // Jika elemen masuk ke dalam layar
         if (entry.isIntersecting) {
             entry.target.classList.add('in-view');
-            
-            // Jika yang masuk adalah grid statistik, jalankan animasi counter
             if (entry.target.classList.contains('stats-grid')) {
                 animateStatCounters();
             }
-        } 
-        // Jika elemen keluar dari layar
-        else {
+        } else {
             entry.target.classList.remove('in-view');
-
-            // Jika yang keluar adalah grid statistik, reset angkanya ke 0
             if (entry.target.classList.contains('stats-grid')) {
                 resetStatCounters();
             }
         }
     });
 }, { 
-    threshold: 0.2 // Animasi terpicu saat 20% elemen terlihat
+    threshold: 0.2
 });
 
-// INI BAGIAN KUNCINYA: Memastikan semua class animasi terdaftar
+// DI SINI KUNCINYA: Kita tambahkan .animate-slide-up & .animate-slide-down
 document.querySelectorAll(
-    '.animate-zoom-in, .stats-grid, .animate-slide-in-left, .animate-slide-in-right'
+    '.animate-zoom-in, .stats-grid, .animate-slide-in-left, .animate-slide-in-right, .animate-slide-up, .animate-slide-down'
 ).forEach(el => {
     if(el) {
         repeatingAnimationObserver.observe(el);
@@ -252,11 +245,9 @@ function animateStatCounters() {
     const statNumbers = document.querySelectorAll('.stat-number');
     statNumbers.forEach(counter => {
         const target = +counter.getAttribute('data-target');
-        
         counter.innerText = '0+';
-        const speed = 1500; 
+        const speed = 1500;
         const increment = target / (speed / 16);
-        
         const updateCount = () => {
             const count = parseFloat(counter.innerText) + increment;
             if (count < target) {
@@ -270,7 +261,7 @@ function animateStatCounters() {
     });
 }
 
-/ =======================================================
+// =======================================================
 // ===      LOGIKA FINAL - GARIS PROSES (RESPONSIF)      ===
 // =======================================================
 
@@ -334,4 +325,3 @@ if (processSection && processLinePathMobile) {
 
 
 }); // <-- Penutup dari addEventListener 'DOMContentLoaded'
-
