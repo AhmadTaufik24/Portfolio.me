@@ -720,11 +720,11 @@ body.dark-mode #modeToggle::after {
 
 
 /* ======================================================= */
-/* ===      STYLE FINAL UNTUK SECTION TENTANG SAYA     === */
+/* ===      PERBAIKAN FINAL - SECTION TENTANG SAYA     === */
 /* ======================================================= */
 
 .about-section {
-    padding: 80px 20px;
+    padding: 60px 20px; /* Padding atas bawah dikurangi sedikit untuk mobile */
     background-color: var(--bg-color);
     overflow: hidden;
 }
@@ -734,11 +734,12 @@ body.dark-mode #modeToggle::after {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+    align-items: center; /* Memastikan semua item (foto & teks) ke tengah */
+    gap: 1.5rem; /* Jarak antara foto dan teks di mobile */
     text-align: center;
 }
 
+/* --- Foto --- */
 .about-photo-wrapper {
     width: 150px;
     height: 150px;
@@ -758,19 +759,21 @@ body.dark-mode .about-photo-wrapper img {
     border-color: #1f2937;
 }
 
+/* --- Teks --- */
 .about-text-wrapper h2 {
-    font-size: 2.2rem;
+    font-size: 2rem; /* Ukuran judul sedikit dikecilkan untuk mobile */
     font-weight: 700;
     margin-bottom: 1rem;
 }
 
 .about-text-wrapper p {
-    font-size: 1.1rem;
+    font-size: 1rem; /* Ukuran paragraf disesuaikan untuk mobile */
     line-height: 1.8;
     opacity: 0.8;
     margin-bottom: 1.5rem;
 }
 
+/* --- Tombol --- */
 .btn-outline {
     padding: 8px 20px;
     font-size: 0.9rem;
@@ -791,19 +794,11 @@ body.dark-mode .about-photo-wrapper img {
     transform: translateY(-2px);
 }
 
-/* --- INI BAGIAN PENTING UNTUK ANIMASI ZOOM --- */
-.animate-zoom-in { 
-    opacity: 0; 
-    transform: scale(0.9); 
-    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.animate-zoom-in.in-view {
-    opacity: 1; 
-    transform: none;
-}
-
-
+/* --- Tampilan Desktop (Responsif) --- */
 @media (min-width: 768px) {
+    .about-section {
+        padding: 80px 20px; /* Kembalikan padding normal di desktop */
+    }
     .about-container {
         flex-direction: row;
         text-align: left;
@@ -812,6 +807,12 @@ body.dark-mode .about-photo-wrapper img {
     .about-photo-wrapper {
         width: 220px;
         height: 220px;
+    }
+    .about-text-wrapper h2 {
+        font-size: 2.2rem; /* Kembalikan ukuran judul di desktop */
+    }
+    .about-text-wrapper p {
+        font-size: 1.1rem; /* Kembalikan ukuran paragraf di desktop */
     }
 }
 
@@ -877,3 +878,4 @@ body.dark-mode .hero-image-wrapper {
         transform: translate(-50%, -50%) rotate(360deg);
     }
 }
+
