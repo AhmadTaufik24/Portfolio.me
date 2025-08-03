@@ -423,6 +423,7 @@ body.dark-mode .hero-image-wrapper {
         font-size: 3.8rem;
     }
 }
+
 @media (max-width: 767px) {
   .desktop-nav { display: none; }
   .mobile-nav { display: block; }
@@ -700,13 +701,12 @@ body.dark-mode #modeToggle::after {
     opacity: 100; /* Tampilkan matahari */
 }
 
-
 /* ======================================================= */
-/* ===      PERBAIKAN FINAL - SECTION TENTANG SAYA     === */
+/* ===      STYLE FINAL UNTUK SECTION TENTANG SAYA     === */
 /* ======================================================= */
 
 .about-section {
-    padding: 60px 20px; /* Padding atas bawah dikurangi sedikit untuk mobile */
+    padding: 60px 20px; /* Padding atas bawah untuk mobile */
     background-color: var(--bg-color);
     overflow: hidden;
 }
@@ -717,7 +717,7 @@ body.dark-mode #modeToggle::after {
     display: flex;
     flex-direction: column;
     align-items: center; /* Memastikan semua item (foto & teks) ke tengah */
-    gap: 1.5rem; /* Jarak antara foto dan teks di mobile */
+    gap: 1.5rem;
     text-align: center;
 }
 
@@ -743,7 +743,7 @@ body.dark-mode .about-photo-wrapper img {
 
 /* --- Teks --- */
 .about-text-wrapper h2 {
-    font-size: 2rem; /* Ukuran judul sedikit dikecilkan untuk mobile */
+    font-size: 2rem; /* Ukuran judul dikecilkan untuk mobile */
     font-weight: 700;
     margin-bottom: 1rem;
 }
@@ -797,7 +797,6 @@ body.dark-mode .about-photo-wrapper img {
         font-size: 1.1rem; /* Kembalikan ukuran paragraf di desktop */
     }
 }
-
 /* ======================================================= */
 /* ===      PATTERN HERO (FINAL - HIGHLIGHT DI TENGAH)   === */
 /* ======================================================= */
@@ -861,7 +860,6 @@ body.dark-mode .hero-image-wrapper {
     }
 }
 
-
 /* ======================================================= */
 /* ===      PERBAIKAN: MENGEMBALIKAN KODE ANIMASI        === */
 /* ======================================================= */
@@ -897,6 +895,8 @@ body.dark-mode .hero-image-wrapper {
     opacity: 1;
     transform: translateX(0);
 }
+
+
 
 /* ======================================================= */
 /* ===      STYLE BARU - PROSES KERJA (RESPONSIF)        === */
@@ -1076,7 +1076,3 @@ body.dark-mode .process-item h3 span {
         display: block; /* Tampilkan garis desktop */
     }
 }
-
-
-
-
