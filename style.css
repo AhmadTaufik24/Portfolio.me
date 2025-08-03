@@ -898,4 +898,185 @@ body.dark-mode .hero-image-wrapper {
     transform: translateX(0);
 }
 
+/* ======================================================= */
+/* ===      STYLE BARU - PROSES KERJA (RESPONSIF)        === */
+/* ======================================================= */
+
+.process-section {
+    padding: 80px 20px;
+    background-color: #f9faff;
+    overflow: hidden;
+    position: relative;
+}
+
+body.dark-mode .process-section {
+    background-color: #161a22;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.process-item {
+    text-align: center;
+    background-color: var(--bg-color);
+    padding: 2.5rem 1.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--btn-secondary-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.process-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 123, 255, 0.1);
+}
+body.dark-mode .process-item:hover {
+    box-shadow: 0 15px 30px rgba(0, 123, 255, 0.08);
+}
+
+.process-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 123, 255, 0.1);
+    color: var(--highlight-color);
+    transition: all 0.3s ease;
+}
+.process-item:hover .process-icon {
+    background-color: var(--highlight-color);
+    color: #ffffff;
+    transform: scale(1.1) rotate(10deg);
+}
+
+.process-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.process-item h3 span {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--btn-secondary-bg);
+    z-index: 0;
+    transition: color 0.3s ease;
+}
+body.dark-mode .process-item h3 span {
+    color: var(--dark-btn-secondary-bg);
+}
+.process-item:hover h3 span {
+    color: rgba(0, 123, 255, 0.08);
+}
+
+.process-item p {
+    line-height: 1.7;
+    opacity: 0.7;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Garis Proses & Animasinya --- */
+.process-line-container-desktop, .process-line-container-mobile {
+    position: absolute;
+    z-index: 0;
+    display: none; /* Sembunyikan keduanya secara default */
+}
+
+/* Desktop */
+.process-line-container-desktop {
+    top: 210px;
+    left: 5%;
+    width: 90%;
+    height: 100px;
+}
+#process-line-path-desktop {
+    stroke: var(--highlight-color);
+    transition: stroke-dashoffset 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Mobile */
+.process-line-container-mobile {
+    top: 150px;
+    left: 0;
+    width: 50px;
+    height: 85%;
+}
+#process-line-path-mobile {
+    stroke: var(--highlight-color);
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 3s ease-in-out;
+}
+.process-section.draw-line-mobile #process-line-path-mobile {
+    stroke-dashoffset: 0;
+}
+
+/* --- Animasi Zigzag (Tidak Berubah) --- */
+.animate-slide-up, .animate-slide-down {
+    opacity: 0;
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.animate-slide-up { transform: translateY(40px); }
+.animate-slide-down { transform: translateY(-40px); }
+.animate-slide-up.in-view, .animate-slide-down.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Tampilan Responsif --- */
+@media (max-width: 991px) {
+    .process-line-container-mobile {
+        display: block; /* Tampilkan garis mobile */
+    }
+    .process-item {
+        text-align: left; /* Teks rata kiri di mobile */
+        padding-left: 50px; /* Beri ruang untuk garis */
+    }
+    .process-icon {
+        margin: 0 0 1.5rem 0; /* Ikon rata kiri */
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .process-line-container-mobile {
+        display: none; /* Sembunyikan garis di tablet */
+    }
+    .process-item {
+        text-align: center; /* Kembalikan ke tengah di tablet */
+        padding-left: 1.5rem;
+    }
+    .process-icon {
+        margin: 0 auto 1.5rem auto;
+    }
+}
+
+@media (min-width: 992px) {
+    .process-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .process-line-container-desktop {
+        display: block; /* Tampilkan garis desktop */
+    }
+}
+
+
+
 
