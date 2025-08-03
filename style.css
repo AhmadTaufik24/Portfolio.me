@@ -862,4 +862,40 @@ body.dark-mode .hero-image-wrapper {
 }
 
 
+/* ======================================================= */
+/* ===      PERBAIKAN: MENGEMBALIKAN KODE ANIMASI        === */
+/* ======================================================= */
+
+/* --- Animasi Zoom-in (Untuk Section "Tentang Saya") --- */
+.animate-zoom-in { 
+    opacity: 0; 
+    transform: scale(0.9); 
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.animate-zoom-in.in-view {
+    opacity: 1; 
+    transform: none;
+}
+
+/* --- Animasi Slide-in (Untuk Section Portfolio) --- */
+.animate-slide-in-left,
+.animate-slide-in-right {
+    opacity: 0;
+    transition: opacity 1.2s ease-out, transform 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.animate-slide-in-left {
+    transform: translateX(-50px);
+}
+
+.animate-slide-in-right {
+    transform: translateX(50px);
+}
+
+.animate-slide-in-left.in-view,
+.animate-slide-in-right.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 
