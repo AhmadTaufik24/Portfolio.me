@@ -1076,3 +1076,146 @@ body.dark-mode .process-item h3 span {
         display: block; /* Tampilkan garis desktop */
     }
 }
+
+/* ======================================================= */
+/* ===      STYLE FINAL - LAYANAN (STABIL & AESTHETIC)   === */
+/* ======================================================= */
+
+.services-radial-section {
+    padding: 80px 20px;
+    background-color: #f9faff;
+    overflow: hidden;
+    position: relative;
+}
+
+.services-radial-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vw;
+    max-width: 800px;
+    max-height: 800px;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.05) 0%, rgba(0, 123, 255, 0) 70%);
+    z-index: 0;
+}
+
+body.dark-mode .services-radial-section {
+    background-color: #161a22;
+}
+body.dark-mode .services-radial-section::before {
+    background: radial-gradient(circle, rgba(100, 180, 255, 0.05) 0%, rgba(100, 180, 255, 0) 70%);
+}
+
+.radial-selector-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Lingkaran Utama & Orbit --- */
+.radial-center {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+.radial-image-wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 123, 255, 0.15);
+    position: relative;
+}
+#radial-service-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+.radial-orbit {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    transform-origin: center;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.orbit-icon {
+    position: absolute;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    border: 1px solid var(--btn-secondary-border);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+.orbit-icon:hover, .orbit-icon.active {
+    background-color: var(--highlight-color);
+    color: #fff;
+    transform: scale(1.15); /* HANYA SCALE, tidak ada translate */
+    border-color: var(--highlight-color);
+}
+.orbit-icon svg { width: 22px; height: 22px; }
+
+/* --- Konten Teks --- */
+.radial-text-content {
+    text-align: center;
+    margin-top: 2rem;
+    max-width: 450px;
+}
+#radial-service-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    transition: opacity 0.4s ease;
+}
+#radial-service-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+    transition: opacity 0.4s ease;
+}
+
+/* --- TAMPILAN MOBILE --- */
+@media (max-width: 991px) {
+    .radial-center {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .radial-orbit {
+        position: static;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        order: -1;
+        width: auto;
+    }
+    .orbit-icon {
+        position: static;
+        margin: 0;
+        transform: none !important;
+    }
+    .radial-image-wrapper {
+        width: 250px;
+        height: 250px;
+    }
+    .radial-text-content {
+        margin-top: 2.5rem;
+    }
+}
+
+
