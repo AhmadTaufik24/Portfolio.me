@@ -270,4 +270,68 @@ function animateStatCounters() {
     });
 }
 
+/ =======================================================
+// ===      LOGIKA FINAL - GARIS PROSES (RESPONSIF)      ===
+// =======================================================
+
+// --- Logika untuk Desktop (Hover) ---
+const processGrid = document.querySelector('.process-grid');
+const processItems = document.querySelectorAll('.process-item');
+const processLinePathDesktop = document.getElementById('process-line-path-desktop');
+
+if (processGrid && processItems.length > 0 && processLinePathDesktop) {
+    const lineStops = [0.12, 0.40, 0.68, 1.0]; 
+    const totalLength = processLinePathDesktop.getTotalLength();
+
+    function drawLineTo(stopIndex) {
+        if (window.innerWidth < 992) return; // Hanya jalankan di desktop
+        if (stopIndex < 0) {
+            processLinePathDesktop.style.strokeDashoffset = totalLength;
+        } else {
+            const percentage = lineStops[stopIndex];
+            processLinePathDesktop.style.strokeDashoffset = totalLength * (1 - percentage);
+        }
+    }
+
+    processLinePathDesktop.style.strokeDasharray = totalLength;
+    drawLineTo(-1);
+
+    processItems.forEach((item, index) => {
+        item.addEventListener('mouseenter', () => drawLineTo(index));
+    });
+
+    processGrid.addEventListener('mouseleave', () => drawLineTo(-1));
+}
+
+
+// --- Logika untuk Mobile (Animasi Scroll) ---
+const processSection = document.getElementById('process');
+const processLinePathMobile = document.getElementById('process-line-path-mobile');
+
+if (processSection && processLinePathMobile) {
+    const lineAnimationObserverMobile = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (window.innerWidth < 992) { // Hanya jalankan di mobile/tablet
+                    const length = processLinePathMobile.getTotalLength();
+                    processLinePathMobile.style.strokeDasharray = length;
+                    processLinePathMobile.style.strokeDashoffset = length;
+                    
+                    setTimeout(() => {
+                        processSection.classList.add('draw-line-mobile');
+                    }, 300);
+                    
+                    observer.unobserve(processSection);
+                }
+            }
+        });
+    }, {
+        threshold: 0.3 // Animasi berjalan saat 30% section terlihat
+    });
+
+    lineAnimationObserverMobile.observe(processSection);
+}
+
+
 }); // <-- Penutup dari addEventListener 'DOMContentLoaded'
+
