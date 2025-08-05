@@ -1161,7 +1161,7 @@ body.dark-mode .services-radial-section::before {
 .orbit-icon:hover, .orbit-icon.active {
     background-color: var(--highlight-color);
     color: #fff;
-    transform: scale(1.15); /* HANYA SCALE, tidak ada translate */
+    transform: scale(1.15) !important;
     border-color: var(--highlight-color);
 }
 .orbit-icon svg { width: 22px; height: 22px; }
@@ -1186,36 +1186,12 @@ body.dark-mode .services-radial-section::before {
     transition: opacity 0.4s ease;
 }
 
-/* --- TAMPILAN MOBILE --- */
-@media (max-width: 991px) {
+/* --- TAMPILAN MOBILE (DIJAMIN SAMA) --- */
+@media (max-width: 767px) {
     .radial-center {
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .radial-orbit {
-        position: static;
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin-bottom: 2rem;
-        order: -1;
-        width: auto;
-    }
-    .orbit-icon {
-        position: static;
-        margin: 0;
-        transform: none !important;
-    }
-    .radial-image-wrapper {
-        width: 250px;
-        height: 250px;
-    }
-    .radial-text-content {
-        margin-top: 2.5rem;
+        /* Perkecil seluruh komponen di mobile */
+        transform: scale(0.8);
+        margin-top: -2rem;
+        margin-bottom: -1rem;
     }
 }
-
-
