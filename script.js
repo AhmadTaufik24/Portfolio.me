@@ -323,7 +323,6 @@ if (processSection && processLinePathMobile) {
     lineAnimationObserverMobile.observe(processSection);
 }
 
-
 // =======================================================
 // ===      LOGIKA FINAL - LAYANAN (SAMA DI SEMUA PERANGKAT) ===
 // =======================================================
@@ -398,6 +397,111 @@ if (radialContainer) {
 }
 
 
+// =======================================================
+// ===           LOGIKA FINAL UNTUK TESTIMONI            ===
+// =======================================================
+
+const testimonialSwiperEl = document.querySelector('.testimonial-swiper');
+if (typeof Swiper !== 'undefined' && testimonialSwiperEl) {
+    const testimonialSwiper = new Swiper('.testimonial-swiper', {
+        loop: true,
+        grabCursor: true,
+        
+        // Tampilan slide responsif
+        slidesPerView: 1.5,
+        spaceBetween: 20,
+        centeredSlides: true,
+        
+        breakpoints: {
+            576: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+            }
+        },
+
+        // Navigasi
+        navigation: {
+            nextEl: '.testimonial-next',
+            prevEl: '.testimonial-prev',
+        },
+
+        // Paginasi
+        pagination: {
+            el: '.testimonial-pagination',
+            clickable: true,
+        },
+    });
+
+    // Logika untuk hover di mobile (via klik)
+    const testimonialSlides = document.querySelectorAll('.testimonial-swiper .swiper-slide');
+    testimonialSlides.forEach(slide => {
+        slide.addEventListener('click', (e) => {
+            // Hanya jalankan di mobile
+            if (window.innerWidth < 992) {
+                e.stopPropagation(); // Hentikan event agar tidak lari ke document
+                const wasActive = slide.classList.contains('mobile-active');
+                
+                testimonialSlides.forEach(s => s.classList.remove('mobile-active'));
+                
+                if (!wasActive) {
+                    slide.classList.add('mobile-active');
+                }
+            }
+        });
+    });
+
+    // Hapus class aktif jika klik di luar slider
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.testimonial-swiper')) {
+            testimonialSlides.forEach(s => s.classList.remove('mobile-active'));
+        }
+    });
+}
+
+// === SERVICE & TESTIMONIAL CARD INTERACTION ===
+  function setupCardInteraction(cards) {
+    if (cards.length > 0) {
+      cards.forEach(card => {
+        card.addEventListener('click', () => {
+          if (card.classList.contains('selected')) {
+            const url = card.dataset.url;
+            if (url) window.open(url, '_blank');
+          } else {
+            cards.forEach(other => other.classList.remove('selected'));
+            card.classList.add('selected');
+          }
+        });
+      });
+    }
+  }
+  setupCardInteraction(serviceCards);
+  setupCardInteraction(testimonialCards);
+
+  // === TESTIMONIAL SLIDER ===
+  if (document.querySelector('.testimonial-swiper')) {
+    new Swiper('.testimonial-swiper', {
+      loop: true, grabCursor: true, spaceBetween: 24,
+      pagination: { el: '.testimonial-pagination', clickable: true },
+      navigation: { nextEl: '.testimonial-next', prevEl: '.testimonial-prev' },
+      breakpoints: { 0: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }
+    });
+  }
+
+  // === FAQ ACCORDION ===
+  if (accordionHeaders.length > 0) {
+    accordionHeaders.forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        const isActive = item.classList.contains('active');
+        accordionHeaders.forEach(h => h.parentElement.classList.remove('active'));
+        if (!isActive) item.classList.add('active');
+      });
+    });
+  }
+
+
 }); // <-- Penutup dari addEventListener 'DOMContentLoaded'
-
-
