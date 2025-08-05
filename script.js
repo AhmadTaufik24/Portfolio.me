@@ -325,7 +325,7 @@ if (processSection && processLinePathMobile) {
 
 
 // =======================================================
-// ===      LOGIKA FINAL - LAYANAN (STABIL & RESPONSIVE) ===
+// ===      LOGIKA FINAL - LAYANAN (SAMA DI SEMUA PERANGKAT) ===
 // =======================================================
 
 const radialContainer = document.querySelector('.radial-selector-container');
@@ -344,8 +344,8 @@ if (radialContainer) {
     const descEl = document.getElementById('radial-service-description');
     const linkEl = document.getElementById('radial-service-link');
 
-    // Fungsi untuk menata ikon di orbitnya (hanya untuk desktop)
-    function setupDesktopLayout() {
+    // Fungsi untuk menata ikon di orbitnya
+    function setupRadialLayout() {
         const radius = 150;
         icons.forEach((icon, i) => {
             const angle = (i / icons.length) * 2 * Math.PI - (Math.PI / 2);
@@ -379,11 +379,9 @@ if (radialContainer) {
         icons.forEach(icon => icon.classList.remove('active'));
         icons[index].classList.add('active');
 
-        // Rotasi orbit hanya terjadi di desktop
-        if (window.innerWidth > 991) {
-            const rotationAngle = -index * (360 / icons.length);
-            orbit.style.transform = `rotate(${rotationAngle}deg)`;
-        }
+        // Rotasi orbit di SEMUA perangkat
+        const rotationAngle = -index * (360 / icons.length);
+        orbit.style.transform = `rotate(${rotationAngle}deg)`;
     }
 
     // Tambahkan event listener ke setiap ikon
@@ -394,39 +392,12 @@ if (radialContainer) {
         });
     });
 
-    // Fungsi untuk inisialisasi atau reset layout berdasarkan ukuran layar
-    function initializeLayout() {
-        if (window.innerWidth > 991) {
-            setupDesktopLayout();
-        } else {
-            // Hapus style inline di mobile agar CSS bisa mengambil alih
-            orbit.style.transform = 'none';
-            icons.forEach(icon => {
-                icon.style.top = '';
-                icon.style.left = '';
-                icon.style.margin = '';
-            });
-        }
-    }
-
     // Jalankan saat halaman dimuat
-    initializeLayout();
+    setupRadialLayout();
     updateContent(0);
-
-    // Jalankan ulang saat ukuran window berubah untuk menjaga responsivitas
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            initializeLayout();
-            const activeIcon = document.querySelector('.orbit-icon.active');
-            const activeIndex = activeIcon ? parseInt(activeIcon.dataset.service) : 0;
-            updateContent(activeIndex);
-        }, 250);
-    });
 }
 
 
-
 }); // <-- Penutup dari addEventListener 'DOMContentLoaded'
+
 
