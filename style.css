@@ -1078,7 +1078,7 @@ body.dark-mode .process-item h3 span {
 }
 
 /* ======================================================= */
-/* ===      STYLE FINAL - LAYANAN (STABIL & AESTHETIC)   === */
+/* ===      STYLE FINAL - LAYANAN (DUAL ANIMATION ICON)  === */
 /* ======================================================= */
 
 .services-radial-section {
@@ -1166,6 +1166,51 @@ body.dark-mode .services-radial-section::before {
 }
 .orbit-icon svg { width: 22px; height: 22px; }
 
+/* --- PENGGABUNGAN DUA ANIMASI --- */
+
+/* Animasi 1: "Energy Ring" (denyut) menggunakan ::after */
+.orbit-icon::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid rgba(0, 123, 255, 0.7);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5), 0 0 20px rgba(0, 123, 255, 0.5) inset;
+    animation: energy-ring 3s infinite;
+    opacity: 0;
+}
+
+/* Animasi 2: "Orbiting Glow" (titik berputar) menggunakan ::before */
+.orbit-icon::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--highlight-color);
+    box-shadow: 0 0 10px var(--highlight-color), 0 0 20px var(--highlight-color);
+    animation: orbit-glow 4s linear infinite;
+}
+
+/* Hentikan kedua animasi saat aktif/hover */
+.orbit-icon:hover::after, .orbit-icon.active::after,
+.orbit-icon:hover::before, .orbit-icon.active::before {
+    animation: none;
+    opacity: 0;
+}
+
+/* Membuat animasi tidak bersamaan */
+.orbit-icon[data-service="1"]::after { animation-delay: 0.7s; }
+.orbit-icon[data-service="2"]::after { animation-delay: 1.4s; }
+.orbit-icon[data-service="3"]::after { animation-delay: 2.1s; }
+
+.orbit-icon[data-service="1"]::before { animation-delay: -1s; }
+.orbit-icon[data-service="2"]::before { animation-delay: -2s; }
+.orbit-icon[data-service="3"]::before { animation-delay: -3s; }
+
+
 /* --- Konten Teks --- */
 .radial-text-content {
     text-align: center;
@@ -1186,12 +1231,23 @@ body.dark-mode .services-radial-section::before {
     transition: opacity 0.4s ease;
 }
 
-/* --- TAMPILAN MOBILE (DIJAMIN SAMA) --- */
-@media (max-width: 767px) {
+/* --- TAMPILAN MOBILE --- */
+@media (max-width: 991px) {
     .radial-center {
-        /* Perkecil seluruh komponen di mobile */
         transform: scale(0.8);
         margin-top: -2rem;
         margin-bottom: -1rem;
     }
+}
+
+/* --- Keyframes untuk Animasi --- */
+@keyframes energy-ring {
+    0% { transform: scale(0.8); opacity: 0; }
+    40% { transform: scale(1.5); opacity: 0.7; }
+    100% { transform: scale(2.2); opacity: 0; }
+}
+
+@keyframes orbit-glow {
+    from { transform: rotate(0deg) translateX(35px) rotate(0deg); }
+    to { transform: rotate(360deg) translateX(35px) rotate(-360deg); }
 }
