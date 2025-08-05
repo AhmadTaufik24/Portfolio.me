@@ -1077,6 +1077,7 @@ body.dark-mode .process-item h3 span {
     }
 }
 
+
 /* ======================================================= */
 /* ===      STYLE FINAL - LAYANAN (DUAL ANIMATION ICON)  === */
 /* ======================================================= */
@@ -1251,3 +1252,738 @@ body.dark-mode .services-radial-section::before {
     from { transform: rotate(0deg) translateX(35px) rotate(0deg); }
     to { transform: rotate(360deg) translateX(35px) rotate(-360deg); }
 }
+
+/* BAGIAN TESTIMONI */
+/* --- Aturan untuk Light Mode (Default) --- */
+/* Ganti aturan .testimonial-section Anda dengan yang ini */
+.testimonial-section {
+  padding: 80px 20px;
+  background-color: #f8f9fa; /* Warna dasar terang */
+  /* Warna pola diubah menjadi lebih gelap (#dee2e6) dan opacity dinaikkan */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3e%3cdefs%3e%3clinearGradient id='a' x1='0' x2='0' y1='1' y2='0'%3e%3cstop offset='0' stop-color='%23f5f5f7'/%3e%3cstop offset='1' stop-color='%23e9ecef'/%3e%3c/linearGradient%3e%3clinearGradient id='b' x1='0' x2='0' y1='0' y2='1'%3e%3cstop offset='0' stop-color='%23f0f0f0'/%3e%3cstop offset='1' stop-color='%23e9ecef'/%3e%3c/linearGradient%3e%3c/defs%3e%3cg fill='%23dee2e6' fill-opacity='0.6'%3e%3crect x='0' y='0' width='100%25' height='100%25' fill='url(%23a)'/%3e%3cpath d='M1600 0L0 0v900h1600V0zM0 0h1600v900H0V0zm1421 862c-174.5 0-316-141.5-316-316s141.5-316 316-316 316 141.5 316 316-141.5 316-316 316zM316 87.8c174.5 0 316 141.5 316 316s-141.5 316-316 316S0 678.3 0 503.8s141.5-316 316-316z'/%3e%3c/g%3e%3c/svg%3e");
+  background-size: cover;
+  overflow: hidden;
+  transition: background-color 0.4s ease;
+}
+
+/* --- Aturan KHUSUS untuk Dark Mode --- */
+body.dark-mode .testimonial-section {
+  background-color: var(--dark-portfolio-bg); /* Warna dasar gelap */
+  /* Pola dengan warna #343a40 (sedikit lebih terang) agar terlihat di background gelap */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3e%3cdefs%3e%3clinearGradient id='a' x1='0' x2='0' y1='1' y2='0'%3e%3cstop offset='0' stop-color='%23212529'/%3e%3cstop offset='1' stop-color='%23343a40'/%3e%3c/linearGradient%3e%3clinearGradient id='b' x1='0' x2='0' y1='0' y2='1'%3e%3cstop offset='0' stop-color='%232a2a2a'/%3e%3cstop offset='1' stop-color='%23343a40'/%3e%3c/linearGradient%3e%3c/defs%3e%3cg fill='%23343a40' fill-opacity='0.4'%3e%3crect x='0' y='0' width='100%25' height='100%25' fill='url(%23a)'/%3e%3cpath d='M1600 0L0 0v900h1600V0zM0 0h1600v900H0V0zm1421 862c-174.5 0-316-141.5-316-316s141.5-316 316-316 316 141.5 316 316-141.5 316-316 316zM316 87.8c174.5 0 316 141.5 316 316s-141.5 316-316 316S0 678.3 0 503.8s141.5-316 316-316z'/%3e%3c/g%3e%3c/svg%3e");
+}
+
+body.dark-mode .testimonial-section {
+  background-color: var(--dark-portfolio-bg);
+}
+
+.testimonial-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimonial-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.testimonial-header h2 {
+  font-size: 2.5rem; /* Samakan dengan header lain */
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.testimonial-header p {
+  font-size: 1.1rem; /* Samakan dengan header lain */
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.testimonial-header p {
+  font-size: 1rem;
+  color: #6c757d;
+  opacity: 1;
+}
+
+.testimonial-slider-wrapper {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.testimonial-swiper {
+  padding-bottom: 50px; /* Ruang untuk pagination */
+}
+
+.testimonial-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4; /* Menjaga bentuk kartu tetap sama */
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  color: #fff;
+  /* Tambahkan properti dari kelas animasi */
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.testimonial-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.testimonial-card:hover .testimonial-bg {
+  transform: scale(1.05);
+}
+
+.testimonial-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  z-index: 2;
+}
+
+.testimonial-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.testimonial-content span {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.testimonial-content p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.testimonial-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.testimonial-link:hover {
+  opacity: 1;
+}
+
+.testimonial-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, hsla(217, 100%, 50%, 0.8), hsla(217, 100%, 50%, 0));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 3;
+}
+
+.testimonial-card:hover .testimonial-overlay,
+.testimonial-card.selected .testimonial-overlay {
+  opacity: 1;
+}
+
+.view-testimonial-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.eye-icon {
+  display: none; /* Sembunyi secara default */
+  width: 40px;
+  height: 40px;
+}
+
+.testimonial-card.selected .eye-icon {
+  display: block; /* Tampil saat card terpilih */
+}
+
+.testimonial-card.selected .view-testimonial-text {
+  display: none; /* Sembunyikan teks saat ikon mata tampil */
+}
+
+/* Navigasi & Pagination kustom */
+/* Navigasi & Pagination kustom */
+.testimonial-prev, .testimonial-next {
+  width: 44px;
+  height: 44px;
+  background-color: #fff; /* Latar tombol diubah jadi putih */
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-prev:hover,
+.testimonial-next:hover {
+  transform: scale(1.1);
+}
+
+body.dark-mode .testimonial-prev,
+body.dark-mode .testimonial-next {
+  background-color: var(--dark-btn-secondary-bg);
+}
+
+/* Kode ini akan memunculkan kembali ikon panah */
+.testimonial-prev::after,
+.testimonial-next::after {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--highlight-color); /* Warna panah menjadi biru */
+}
+
+.testimonial-pagination .swiper-pagination-bullet {
+  background-color: var(--btn-primary-bg);
+}
+.testimonial-pagination .swiper-pagination-bullet {
+  background-color: var(--btn-primary-bg);
+}
+
+/* GAYA TOMBOL OUTLINE BARU */
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--highlight-color);
+  color: var(--highlight-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 10px; /* Perkecil padding */
+  font-size: 0.7rem; /* Perkecil font */
+}
+
+.btn-outline .arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--highlight-color);
+  color: var(--btn-primary-text);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+.btn-outline:hover .arrow-icon {
+  transform: translateX(4px);
+}
+
+/* PERBAIKAN FINAL POSISI HERO */
+
+/* 1. Jadikan section sebagai acuan utama */
+
+/* 3. Angkat semua konten (teks & gambar) ke lapisan depan */
+.hero-content {
+  position: relative; /* Diperlukan agar z-index bekerja */
+  z-index: 1; 
+}
+
+/* BAGIAN JURNAL (LENGKAP) */
+
+.journal-section {
+  position: relative; /* Wajib sebagai acuan */
+  padding: 120px 20px; /* Beri padding lebih untuk ruang lengkungan */
+  background-color: var(--portfolio-bg); /* Warna dasar abu-abu */
+  overflow: hidden;
+  transition: background-color 0.4s ease;
+}
+
+/* Lengkungan di bagian ATAS */
+.journal-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Tinggi lengkungan atas */
+  background-color: var(--bg-color); /* Warna putih */
+  clip-path: path('M 0 100 L 0 0 C 480 150 960 0 1440 50 L 1440 100 Z');
+}
+
+/* Lengkungan di bagian BAWAH */
+.journal-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Tinggi lengkungan bawah */
+  background-color: var(--bg-color); /* Warna putih */
+  clip-path: path('M 0 0 L 1440 0 L 1440 100 C 960 -50 480 100 0 50 L 0 0 Z');
+}
+
+/* Versi Dark Mode untuk lengkungan */
+body.dark-mode .journal-section {
+  background-color: var(--dark-portfolio-bg);
+}
+
+body.dark-mode .journal-section::before,
+body.dark-mode .journal-section::after {
+  background-color: var(--dark-bg-color);
+}
+
+.journal-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative; /* Pastikan konten di atas lengkungan */
+  z-index: 1;
+}
+
+.journal-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.journal-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.journal-header p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.journal-content hr {
+  border: none;
+  height: 1px;
+  background-color: var(--navbar-border);
+  margin: 30px 0;
+}
+
+body.dark-mode .journal-content hr {
+  background-color: var(--dark-navbar-border);
+}
+
+.featured-post-link {
+  text-decoration: none;
+  display: block;
+  color: var(--text-color);
+  margin-bottom: 30px;
+}
+
+.featured-post {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  transition: background-color 0.3s ease;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.featured-post:hover {
+  background-color: var(--portfolio-bg);
+}
+
+body.dark-mode .featured-post:hover {
+  background-color: var(--dark-portfolio-bg);
+}
+
+.featured-post-thumbnail {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.featured-post-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-post-content .post-category {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--highlight-color);
+  margin-bottom: 8px;
+}
+
+.featured-post-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.featured-post-content p {
+  font-size: 1rem;
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: var(--text-color);
+  opacity: 0.6;
+}
+
+.post-list {
+  counter-reset: post-number; /* Inisialisasi counter */
+}
+
+.post-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  color: var(--text-color);
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  counter-increment: post-number; /* Naikkan hitungan untuk setiap item */
+  position: relative;
+  padding-left: 45px;
+}
+
+.post-item::before {
+  content: "0" counter(post-number) "."; /* Tampilkan nomor (misal: 01.) */
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--highlight-color);
+  width: 30px;
+  text-align: left;
+}
+
+.post-item:hover {
+  background-color: var(--portfolio-bg);
+}
+
+body.dark-mode .post-item:hover {
+  background-color: var(--dark-portfolio-bg);
+}
+
+.post-item h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.journal-footer {
+  text-align: center;
+  margin-top: 40px;
+}
+
+@media (max-width: 767px) {
+  .featured-post {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.featured-post-content h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  transition: color 0.3s ease; /* Tambah transisi */
+}
+
+.featured-post-content p {
+  font-size: 1rem;
+  opacity: 0.7;
+  margin-bottom: 16px; /* Tambah margin */
+}
+
+.featured-post-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--highlight-color);
+}
+
+.featured-post-footer .post-meta {
+  color: var(--text-color);
+  opacity: 0.6;
+}
+
+.featured-post-footer .arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Efek Hover untuk Artikel Unggulan */
+.featured-post-link:hover .featured-post-content h3 {
+  color: var(--highlight-color);
+}
+
+.featured-post-link:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* Efek Hover untuk Daftar Artikel */
+.post-item h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease; /* Tambah transisi */
+}
+
+.post-item:hover h4 {
+  color: var(--highlight-color);
+}
+
+/* BAGIAN Q&A / FAQ */
+.faq-section {
+  padding: 80px 20px;
+  background-color: var(--portfolio-bg);
+  transition: background-color 0.4s ease;
+}
+
+body.dark-mode .faq-section {
+  background-color: var(--dark-portfolio-bg);
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.faq-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.faq-header p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.accordion-item {
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--navbar-border);
+}
+body.dark-mode .accordion-item {
+  background-color: var(--dark-bg-color);
+  border-bottom: 1px solid var(--dark-navbar-border);
+}
+.accordion-item:first-child {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+.accordion-item:last-child {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  border-bottom: none;
+}
+
+.accordion-header {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 24px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-icon {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  color: var(--highlight-color);
+}
+
+.accordion-item.active .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.accordion-content p {
+  padding: 0 24px 24px 24px;
+  font-size: 1rem;
+  line-height: 1.7;
+  opacity: 0.8;
+}
+
+.accordion-item.active .accordion-content {
+  /* Nilai max-height harus lebih besar dari konten jawaban terpanjang Anda */
+  max-height: 300px; 
+}
+
+.faq-cta {
+  text-align: center;
+  margin-top: 50px;
+  padding: 30px;
+  border: 1px dashed var(--navbar-border);
+  border-radius: 12px;
+}
+body.dark-mode .faq-cta {
+  border-color: var(--dark-navbar-border);
+}
+
+.faq-cta h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+}
+
+.faq-cta p {
+  margin-bottom: 24px;
+  opacity: 0.7;
+}
+
+
+/* BAGIAN FOOTER (GRADASI BIRU-PUTIH + HITAM) */
+.compact-footer {
+  position: relative;
+  padding: 40px 20px;
+  border-top: 1px solid var(--navbar-border);
+  
+  /* Latar belakang dasar jika gradasi tidak didukung */
+  background-color: #f0f6ff;
+  
+  /* Menumpuk 2 Lapis Gradasi */
+  background-image:
+    /* Lapis 1: Gradasi hitam sangat halus dari bawah */
+    linear-gradient(to top, rgba(0, 0, 0, 0.03) 0%, transparent 10%),
+    /* Lapis 2: Gradasi biru ke putih */
+    linear-gradient(135deg, #456d91 0%, #c5c5c5 70%);
+}
+
+body.dark-mode .compact-footer {
+  background: var(--dark-bg-color);
+  background-image: radial-gradient(
+    ellipse at top center,
+    hsla(217, 100%, 50%, 0.1) 0%,
+    transparent 60%
+  );
+  border-top: 1px solid var(--dark-navbar-border);
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-top-row, .footer-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--highlight-color);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-socials img {
+  width: 24px;
+  height: 24px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.footer-socials a:hover img {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+body.dark-mode .footer-socials img {
+  filter: brightness(0) invert(1);
+  opacity: 0.7;
+}
+body.dark-mode .footer-socials a:hover img {
+  opacity: 1;
+}
+
+.footer-divider {
+  border: none;
+  height: 1px;
+  background-color: var(--navbar-border);
+  margin: 24px 0;
+}
+body.dark-mode .footer-divider {
+  background-color: var(--dark-navbar-border);
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.6;
+}
+
+body.dark-mode .footer-copyright {
+    color: #a0a0a0;
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-nav a {
+  color: var(--text-color);
+  opacity: 0.8;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--highlight-color);
+}
+body.dark-mode .footer-nav a {
+    color: #a0a0a0;
+}
+body.dark-mode .footer-nav a:hover {
+  color: #fff;
+}
+
